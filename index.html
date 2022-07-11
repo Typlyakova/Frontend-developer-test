@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="assets/css/app.fb774af7218232673f48.css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-one">
+            <h1>Добавление товара</h1>
+            <div class="katalog">
+                <select class="katalog_img" id="selectvalue">
+
+                    <option value="min">Цена min</option>
+
+                    <option value="max">Цена max</option>
+
+                    <option value="names">По наименованию↓</option>
+                    <option value="namesUp">По наименованию↑</option>
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="left-menu">
+                <div class="menu-categ">
+                    <div class="form">
+                        <form name="Добавление товара">
+                            <span class="form1"> Наименование товара: </span><br>
+                            <input id="input1" type="text" class="form_input"
+                                placeholder="Введите наименование товара"><br><br>
+                            <div id="err0" class="err"></div>
+
+                            <span class="form2"> Описание товара</span><br>
+                            <input id="input4" type="text" class="form_input"
+                                placeholder="Введите описание товара"><br><br>
+
+                            <span class="form1"> Ссылка на изображение товара:</span><br>
+                            <input id="input2" type="text" class="form_input" placeholder="Введите ссылку"><br><br>
+                            <div id="err2" class="err"></div>
+
+                            <span class="form1">Цена товара:</span><br>
+                            <input id="input3" type="text" class="form_input" placeholder="Введите цену"><br><br>
+                            <div id="err3" class="err"></div>
+
+                            <button id="btn-add" class="send_btn general-btn">Добавление товара</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-menu">
+                <section class="tovar">
+                    <div class="container">
+                        <div id="cardsPlace" class="grid_cont">
+                            
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    </div>
+</body>
+
+</html>
+<script src="./js/jquery.js"></script>
+<script src="./js/job.js"></script>
+<script src="./js/sort.js"></script>
+<script>
+    function discharge() {
+        $('#input3').val(String($('#input3').val().replace(/[^0-9.]/g, '')).replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+    }
+    discharge();
+    $('#input3').keyup(function () {
+        discharge();
+    });
+</script>
